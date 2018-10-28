@@ -1,5 +1,5 @@
 
-public class DevideEvenly {
+public class DivideEvenly {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
