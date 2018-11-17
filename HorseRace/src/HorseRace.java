@@ -13,18 +13,18 @@
  *Displays results for individual horses or all horses based on user input
  *
  *********************************************/
-public class horseRace {
+public class HorseRace {
 	
 
 	public static void main(String[] args) {
 		int horseChoice = 0;
-		int[][] currentRace = raceTable.generateTable();  // call the generate table method to create the horse race table array
+		int[][] currentRace = RaceTable.generateTable();  // call the generate table method to create the horse race table array
 		
-		raceTable.displayRace(currentRace);  // Display the results of the array with the displayRace method
+		RaceTable.displayRace(currentRace);  // Display the results of the array with the displayRace method
 		
-		horseChoice = raceTable.displayMenu();  // Display the menu to and get user input
+		horseChoice = RaceTable.displayMenu();  // Display the menu to and get user input
 		
-		raceTable.getResults(horseChoice, currentRace);  //  Get the results based on user menu selection 
+		RaceTable.getResults(horseChoice, currentRace);  //  Get the results based on user menu selection 
 	}
 
 
