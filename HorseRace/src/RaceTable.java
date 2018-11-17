@@ -1,6 +1,6 @@
 import java.util.Random;
 import java.util.*;
-public class raceTable {
+public class RaceTable {
 	final static String DIVIDER = "-------------------";
 	
 	static int[][] generateTable() {
@@ -20,12 +20,11 @@ public class raceTable {
 		//Formats and displays the horse race table
 		int i, j;
 		final String HEADER =      "Horse Race Results!";
-		//final String DIVIDER =     "-------------------";
-		final String RACENUMBERS = "          1 2 3 4 5";
+		final String RACE_NUMBERS = "          1 2 3 4 5";
 		final String HORSE =       "HORSE #";
 		System.out.println(HEADER);
 		System.out.println(DIVIDER);
-		System.out.println(RACENUMBERS);
+		System.out.println(RACE_NUMBERS);
 		System.out.println(DIVIDER);
 		//iterate through array and display rows
 		for(i = 1; i< t[0].length; ++i) {
@@ -46,58 +45,29 @@ public class raceTable {
 		return horseChoice;
 	}
 	static void getResults(int horse, int[][] race) {
-		int i, j, first = 0, second = 0, third = 0, none = 0;
+		int i, j;
+		int[] results = new int[4];
 		String horseName = "";
 		if (horse >= 1 && horse < 5) {  //test if menu was asking for an individual horse
 			horseName = " Horse Number " + horse;
 			for(i = 0; i<=race.length; ++i) {  //loop through the chosen horse results and total the places
-				switch (race[horse-1][i]) {  //test the array value, add to the correct total
-				case 1:
-					++first;
-					break;
-				case 2:
-					++second;
-					break;
-				case 3:
-					++third;
-					break;
-				case 0:
-					++none;
-					break;
-				}			
+				++results[race[horse-1][i]];  //total results in array, index = result
 				}
 			} else if (horse == 5) { //calculate the total for all horses by looping through the array, one loop for columns, one for rows
 				horseName = " All Horses:";
 				for(i = 0; i < race.length; ++i) {
 					for(j = 0; j < race[i].length; ++j) {
-						switch (race[i][j]) {
-						case 1:
-							++first;
-							break;
-						case 2:
-							++second;
-							break;
-						case 3:
-							++third;
-							break;
-						case 0:
-							++none;
-							break;
-						default:
-							System.out.println("Something is wrong");
-							break;
-						}	
+						++results[race[i][j]];   //total results in array, index = result
 					}
 				}
 		}
 		// Display the totals
 		System.out.println("Race results for" + horseName);
 		System.out.println(DIVIDER);
-		System.out.println("First place:      " + first);
-		System.out.println("Second place:     " + second);
-		System.out.println("Third place:      " + third);
-		System.out.println("Did not place:    " + none);
+		System.out.println("First place:      " + results[1]);
+		System.out.println("Second place:     " + results[2]);
+		System.out.println("Third place:      " + results[3]);
+		System.out.println("Did not place:    " + results[0]);
 		System.out.println(DIVIDER);
-
 	}
 }
