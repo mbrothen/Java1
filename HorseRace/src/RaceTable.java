@@ -20,7 +20,6 @@ public class RaceTable {
 		//Formats and displays the horse race table
 		int i, j;
 		final String HEADER =      "Horse Race Results!";
-		//final String DIVIDER =     "-------------------";
 		final String RACE_NUMBERS = "          1 2 3 4 5";
 		final String HORSE =       "HORSE #";
 		System.out.println(HEADER);
@@ -46,7 +45,7 @@ public class RaceTable {
 		return horseChoice;
 	}
 	static void getResults(int horse, int[][] race) {
-		int i, j, first = 0, second = 0, third = 0, none = 0;
+		int i, j;
 		int[] results = new int[4];
 		String horseName = "";
 		if (horse >= 1 && horse < 5) {  //test if menu was asking for an individual horse
