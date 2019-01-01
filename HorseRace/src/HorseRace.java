@@ -1,6 +1,6 @@
 /*********************************************
  * 
- * @author Matt
+ * @author Matt Brothen
  *
  *Java Programming 1
  *

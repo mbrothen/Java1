@@ -1,3 +1,17 @@
+/****************************************************
+ * Methods to run the HorseRace
+ * 
+ * generateTable - creates the race result table random numbers 0-3 in a 4x5 array, 4 horses, 5 races
+ * 
+ * displayRace - prints the results of the raceTable to the screen formated to show each horse and race number
+ * 
+ * displayMenu - gives user options to get results totals for a selected horse or all horses
+ * 
+ *  getResults - totals the results of the horse selected by the user or all horses, displays the results
+ *  
+ *  
+ ******************************************************/
+
 import java.util.Random;
 import java.util.*;
 public class RaceTable {
